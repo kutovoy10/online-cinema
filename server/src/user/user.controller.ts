@@ -34,7 +34,7 @@ export class UserController {
 	@HttpCode(200)
 	@Auth()
 	async updateProfile(@User('_id') _id: string, @Body() dto: UpdateUserDto) {
-		return this.UserService.updateProfile(_id, dto)
+		return this.UserService.update(_id, dto)
 	}
 
 	@Get('count')
@@ -59,11 +59,11 @@ export class UserController {
 	@Put(':id')
 	@HttpCode(200)
 	@Auth('admin')
-	async updateProfile1(
+	async updateUser(
 		@Param('id', IdValidationPipe) id: string,
 		@Body() dto: UpdateUserDto
 	) {
-		return this.UserService.updateProfile(id, dto)
+		return this.UserService.update(id, dto)
 	}
 
 	@Delete(':id')
