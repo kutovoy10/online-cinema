@@ -23,7 +23,7 @@ export class UserService {
 		return user
 	}
 
-	async updateProfile(_id: string, dto: UpdateUserDto) {
+	async update(_id: string, dto: UpdateUserDto) {
 		const user = await this.byId(_id)
 		const isSameUser = await this.UserModel.findOne({ email: dto.email })
 
