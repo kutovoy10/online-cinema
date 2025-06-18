@@ -12,8 +12,14 @@ export class GenreService {
     @InjectModel(GenreModel) private readonly GenreModel: ModelType<GenreModel>
   ) {}
 
-  bySlug(slug: string) {
-    return this.GenreModel.findOne({ slug }).exec()
+  async bySlug(slug: string) {
+    const doc = await this.GenreModel.findOne({ slug }).exec()
+
+    if (!doc) {
+      throw new NotFoundException(`Actor with slug ${slug} not found`)
+    }
+
+    return doc
   }
 
   async getAll(searchTerm?: string) {
