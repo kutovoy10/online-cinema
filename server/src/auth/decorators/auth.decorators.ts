@@ -5,8 +5,8 @@ import { JwtAuthGuard } from '@src/auth/guards/jwt.guard'
 import { OnlyAdminGuard } from '@src/auth/guards/admin.guard'
 
 export const Auth = (role: TypeRole = 'user') =>
-	applyDecorators(
-		role === 'admin'
-			? UseGuards(JwtAuthGuard, OnlyAdminGuard)
-			: UseGuards(JwtAuthGuard)
-	)
+  applyDecorators(
+    role === 'admin'
+      ? UseGuards(JwtAuthGuard, OnlyAdminGuard)
+      : UseGuards(JwtAuthGuard)
+  )

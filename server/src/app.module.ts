@@ -11,18 +11,18 @@ import { GenreModule } from '@src/genre/genre.module'
 import { getMongoDbConfig } from '@src/config/mongo.config'
 
 @Module({
-	imports: [
-		ConfigModule.forRoot(),
-		TypegooseModule.forRootAsync({
-			imports: [ConfigModule],
-			inject: [ConfigService],
-			useFactory: getMongoDbConfig,
-		}),
-		AuthModule,
-		UserModule,
-		GenreModule,
-	],
-	controllers: [AppController],
-	providers: [AppService],
+  imports: [
+    ConfigModule.forRoot(),
+    TypegooseModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: getMongoDbConfig,
+    }),
+    AuthModule,
+    UserModule,
+    GenreModule,
+  ],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule {}
