@@ -8,7 +8,8 @@ import { AppController } from '@src/app.controller'
 import { AuthModule } from '@src/auth/auth.module'
 import { UserModule } from '@src/user/user.module'
 import { GenreModule } from '@src/genre/genre.module'
-import { FileModule } from './file/file.module'
+import { FileModule } from '@src/file/file.module'
+import { ActorModule } from '@src/actor/actor.module'
 
 import { getMongoDbConfig } from '@src/config/mongo.config'
 
@@ -24,6 +25,7 @@ import { getMongoDbConfig } from '@src/config/mongo.config'
     UserModule,
     GenreModule,
     FileModule,
+    ActorModule,
   ],
   controllers: [AppController],
   providers: [AppService],
