@@ -4,9 +4,11 @@ import { TypegooseModule } from 'nestjs-typegoose'
 
 import { AppService } from '@src/app.service'
 import { AppController } from '@src/app.controller'
+
 import { AuthModule } from '@src/auth/auth.module'
 import { UserModule } from '@src/user/user.module'
 import { GenreModule } from '@src/genre/genre.module'
+import { FileModule } from './file/file.module'
 
 import { getMongoDbConfig } from '@src/config/mongo.config'
 
@@ -21,6 +23,7 @@ import { getMongoDbConfig } from '@src/config/mongo.config'
     AuthModule,
     UserModule,
     GenreModule,
+    FileModule,
   ],
   controllers: [AppController],
   providers: [AppService],
