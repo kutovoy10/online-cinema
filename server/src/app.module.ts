@@ -12,6 +12,7 @@ import { FileModule } from '@src/file/file.module'
 import { ActorModule } from '@src/actor/actor.module'
 
 import { getMongoDbConfig } from '@src/config/mongo.config'
+import { MovieModule } from './movie/movie.module'
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { getMongoDbConfig } from '@src/config/mongo.config'
     GenreModule,
     FileModule,
     ActorModule,
+    MovieModule,
   ],
   controllers: [AppController],
   providers: [AppService],
