@@ -8,7 +8,7 @@ import { ActorController } from '@src/actor/actor.controller'
 @Module({
   imports: [
     TypegooseModule.forFeature([
-      { typegooseClass: ActorModel, schemaOptions: { collection: 'actor' } },
+      { typegooseClass: ActorModel, schemaOptions: { collection: 'actors' } },
     ]),
   ],
   controllers: [ActorController],
